@@ -26,7 +26,7 @@ services:
       HOMESERVER: https://matrix.org
       PREFIX: '!'
       SPOTIFY_CLIENT_ID: YOUR_CLIENT_ID
-      SPOTIFY_CLIENT_ID: YOUR_CLIENT_SECRET
+      SPOTIFY_CLIENT_SECRET: YOUR_CLIENT_SECRET
     volumes:
       - ${PWD}/matrixspotifydownloader:/app/data
 ```
