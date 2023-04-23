@@ -1,0 +1,16 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "env": { "node": true },
+    "parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module",
+		"project": "./tsconfig.json"
+	},
+    "rules": {
+        "@typescript-eslint/no-explicit-any": 0,
+        "curly": ["error", "multi"]
+    },
+    "plugins": ["@typescript-eslint", "jsdoc", "sonarjs"],
+	"extends": ["eslint:recommended", "plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended", "plugin:sonarjs/recommended"]
+}
