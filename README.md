@@ -25,6 +25,8 @@ services:
       DOWNLOAD_FOLDER: /mnt/user/media/Music
       HOMESERVER: https://matrix.org
       PREFIX: '!'
+      SPOTIFY_CLIENT_ID: YOUR_CLIENT_ID
+      SPOTIFY_CLIENT_ID: YOUR_CLIENT_SECRET
     volumes:
       - ${PWD}/matrixspotifydownloader:/app/data
 ```
