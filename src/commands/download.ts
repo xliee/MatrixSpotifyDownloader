@@ -21,7 +21,7 @@ export class Download extends Command {
     const track = await this.client.spotify.getTrack(trackUrl);
     const artist = track.artists[0];
 
-    if (!existsSync(`$/music/${artist}`))
+    if (!existsSync(`/music/${artist}`))
       mkdirSync(`/music/${artist}`);
 
     await this.client.spotify.downloadTrack(trackUrl, `/music/${artist}/${track.name}.mp3`);
