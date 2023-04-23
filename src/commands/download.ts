@@ -21,10 +21,10 @@ export class Download extends Command {
     const track = await this.client.spotify.getTrack(trackUrl);
     const artist = track.artists[0];
 
-    if (!existsSync(`${process.env.DOWNLOAD_FOLDER}/${artist}`))
-      mkdirSync(`${process.env.DOWNLOAD_FOLDER}/${artist}`);
+    if (!existsSync(`$/music/${artist}`))
+      mkdirSync(`/music/${artist}`);
 
-    await this.client.spotify.downloadTrack(trackUrl, `${process.env.DOWNLOAD_FOLDER}/${artist}/${track.name}.mp3`);
+    await this.client.spotify.downloadTrack(trackUrl, `/music/${artist}/${track.name}.mp3`);
 
     return this.client.replyText(roomId, event, `Successfully downloaded: ${track.name}`);
   }

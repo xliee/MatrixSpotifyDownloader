@@ -8,9 +8,9 @@ import 'dotenv/config';
 import { Client } from '@classes/Client';
 
 // Environment variables
-const { ACCESS_TOKEN, DOWNLOAD_FOLDER, HOMESERVER, SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET } = process.env;
+const { ACCESS_TOKEN, HOMESERVER, SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET } = process.env;
 
-if (!ACCESS_TOKEN || !DOWNLOAD_FOLDER || !HOMESERVER || !SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET)
+if (!ACCESS_TOKEN || !HOMESERVER || !SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET)
   throw new Error('[MatrixSpotifyDownloader]: Missing environment variables.');
 
 // Start server and create bot

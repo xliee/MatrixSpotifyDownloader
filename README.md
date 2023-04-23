@@ -22,11 +22,11 @@ services:
     restart: unless-stopped
     environment:
       ACCESS_TOKEN: YOUR_ACCESS_TOKEN
-      DOWNLOAD_FOLDER: /mnt/user/media/Music
       HOMESERVER: https://matrix.org
       PREFIX: '!'
       SPOTIFY_CLIENT_ID: YOUR_CLIENT_ID
       SPOTIFY_CLIENT_SECRET: YOUR_CLIENT_SECRET
     volumes:
       - ${PWD}/matrixspotifydownloader:/app/data
+      - /mnt/user/media/Music:/music
 ```
