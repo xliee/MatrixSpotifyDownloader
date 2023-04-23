@@ -23,7 +23,7 @@ RUN yarn --production=true
 FROM node:20.0.0-bullseye-slim
 LABEL maintainer="Spencer-0003"
 
-RUN apt-get update && apt-get install -y bash && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y bash ffmpeg && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 
 COPY --from=cleaner /app ./
