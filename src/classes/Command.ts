@@ -9,7 +9,7 @@ export abstract class Command {
   description: string;
 
   // Constructor
-  constructor(public readonly client: typeof Client, options: CommandOptions) {
+  constructor(public readonly client: Client, options: CommandOptions) {
     this.name = options.name;
     this.description = options.description;
   }
