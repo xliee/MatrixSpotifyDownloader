@@ -31,10 +31,25 @@ jobs:
         with:
           images: spencer0003/matrixspotifydownloader
 
-      - name: Publish
+      - name: Publish to Docker Hub
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
           tags: spencer0003/matrixspotifydownloader:latest
+          labels: ${{ steps.metadata.outputs.labels }}
+
+      - name: Login to GitHub
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.PAT }}
+
+      - name: Publish to Github
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/spencer-0003/matrixspotifydownloader:latest
           labels: ${{ steps.metadata.outputs.labels }}
