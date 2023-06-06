@@ -1,5 +1,5 @@
 # Compiler
-FROM node:20.2.0-bullseye-slim as compiler
+FROM node:20.2.0-bullseye-slim AS compiler
 LABEL maintainer="Spencer-0003"
 
 WORKDIR /app
@@ -10,7 +10,7 @@ COPY . ./
 RUN yarn build
 
 # Cleaner
-FROM node:20.2.0-bullseye-slim as cleaner
+FROM node:20.2.0-bullseye-slim AS cleaner
 LABEL maintainer="Spencer-0003"
 
 WORKDIR /app

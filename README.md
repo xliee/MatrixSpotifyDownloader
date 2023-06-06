@@ -17,7 +17,7 @@ version: '3.9'
 
 services:
   matrix_webhooks:
-    image: spencer0003/matrixspotifydownloader:latest
+    image: spencer0003/matrixspotifydownloader:latest # Or ghcr.io/spencer-0003/matrixspotifydownloader:latest
     container_name: MatrixSpotifyDownloader
     restart: unless-stopped
     environment:
