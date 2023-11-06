@@ -1,7 +1,6 @@
 // Import classes, types & constants
 import type { Client } from '@classes/Client';
 import type { CommandContext } from '@typings/command';
-import { existsSync, mkdirSync } from 'fs';
 import { Command } from '@classes/Command';
 
 // Export class
@@ -19,15 +18,13 @@ export class Download extends Command {
     if (!trackUrl) return this.client.replyText(roomId, event, 'Song not found.');
 
     const track = await this.client.spotify.getTrack(trackUrl);
-    const artist = track.artists[0];
 
     const buffer: Buffer = (await this.client.spotify.downloadTrack(trackUrl)) as Buffer;
     
     await this.client.replyText(roomId, event, `Successfully downloaded: ${track.name}`);
-    
+
     // send the file to the room
     const uri = await this.client.uploadContent(buffer, 'audio/mpeg', `${track.name}.mp3`);
-    const httpUri = this.client.mxcToHttp(uri);
     return this.client.sendMessage(roomId, {
       msgtype: 'm.audio',
       body: track.name,
